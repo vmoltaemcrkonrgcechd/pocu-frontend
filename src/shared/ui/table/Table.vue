@@ -26,23 +26,36 @@ const columns = computed(() => slots.default?.());
 </script>
 
 <template>
-  <table>
+  <table
+    class="w-full bg-white shadow-md rounded-lg text-sm border-collapse overflow-hidden"
+  >
     <slot />
-    <thead>
-      <tr>
-        <th v-for="col in columns">{{ col.props.header }}</th>
+    <thead class="shadow-md">
+      <tr class="bg-blue-400 text-white uppercase">
+        <th class="cell" v-for="col in columns">{{ col.props.header }}</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="row in rows">
+      <tr class="even:bg-blue-100" v-for="row in rows">
         <template v-for="col in columns">
           <td v-if="col.children">
             <component v-for="child in col.children" :is="child" :row="row" />
           </td>
 
-          <td v-else>{{ getField(row, col.props.field) }}</td>
+          <td class="cell border-l first:border-none text-gray-900" v-else>
+            {{ getField(row, col.props.field) ?? `нет данных` }}
+          </td>
         </template>
       </tr>
     </tbody>
   </table>
 </template>
+
+<style scoped>
+.cell {
+  @apply py-3
+	px-4
+	border-blue-300
+	whitespace-nowrap;
+}
+</style>
