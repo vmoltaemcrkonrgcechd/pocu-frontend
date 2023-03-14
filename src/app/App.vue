@@ -2,4 +2,6 @@
 import "./index.css";
 </script>
 
-<template></template>
+<template>
+  <router-view />
+</template>
