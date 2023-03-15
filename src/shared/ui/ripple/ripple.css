@@ -1,0 +1,23 @@
+@keyframes ripple {
+  0% {
+    @apply w-0
+		h-0
+		opacity-50;
+  }
+
+  100% {
+    @apply w-72
+		h-72
+		opacity-0;
+  }
+}
+
+.ripple {
+  @apply absolute
+	bg-white
+	translate-x-[-50%]
+	translate-y-[-50%]
+	rounded-full
+	pointer-events-none
+	animate-[ripple_1s];
+}
