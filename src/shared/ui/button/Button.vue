@@ -18,7 +18,7 @@ const props = defineProps({
     default: () => false,
   },
 
-  withoutPadding: {
+  pure: {
     type: Boolean as PropType<boolean>,
     default: () => false,
   },
@@ -29,7 +29,7 @@ const buttonClass = computed(() => {
     button: true,
     danger: props.danger,
     "only-icon": props.icon && !props.label,
-    "without-padding": props.withoutPadding,
+    pure: props.pure,
   };
 });
 </script>
@@ -75,7 +75,11 @@ const buttonClass = computed(() => {
 	rounded-full;
 }
 
-.without-padding {
-  @apply p-0;
+.pure {
+  @apply p-0.5
+  bg-inherit
+  text-gray-900
+  hover:bg-gray-900
+  hover:bg-opacity-10;
 }
 </style>
