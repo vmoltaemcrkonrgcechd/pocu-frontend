@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { defineProps, PropType, computed } from "vue";
+import { PropType, computed } from "vue";
 import "../ripple/ripple.css";
 
 const props = defineProps({

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { defineProps, PropType, defineEmits, ref } from "vue";
+import { PropType, defineEmits, ref } from "vue";
 
 defineProps({
   modelValue: {

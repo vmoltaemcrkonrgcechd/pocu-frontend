@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { defineProps, PropType, computed, useSlots } from "vue";
+import { PropType, computed, useSlots } from "vue";
 
 type row = { [key: string]: any };
 
