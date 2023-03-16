@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType, defineEmits, computed } from "vue";
+import { PropType, computed } from "vue";
 
 const props = defineProps({
   modelValue: {
@@ -10,6 +10,11 @@ const props = defineProps({
   label: {
     type: String as PropType<string | null>,
     default: () => null,
+  },
+
+  disabled: {
+    type: Boolean as PropType<boolean>,
+    default: () => false,
   },
 });
 
@@ -28,8 +33,13 @@ const inputClass = computed(() => {
 </script>
 
 <template>
-  <label class="relative text-sm flex bg-inherit">
-    <input :class="inputClass" :value="modelValue" @input="onInput" />
+  <label class="relative text-sm flex bg-white">
+    <input
+      :class="inputClass"
+      :value="modelValue"
+      @input="onInput"
+      :disabled="disabled"
+    />
     <span v-if="label" class="label">{{ label }}</span>
   </label>
 </template>

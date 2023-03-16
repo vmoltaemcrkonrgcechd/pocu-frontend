@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType, defineEmits, ref } from "vue";
+import { PropType, ref } from "vue";
 
 defineProps({
   modelValue: {
@@ -31,7 +31,7 @@ const onClick = (event: Event) => {
 
 <style scoped>
 .dialog {
-  @apply absolute
+  @apply fixed
   top-0
   left-0
   right-0
