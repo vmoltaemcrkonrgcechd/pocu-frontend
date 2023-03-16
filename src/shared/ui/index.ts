@@ -3,7 +3,17 @@ import Table from "./table/Table.vue";
 import Button from "./button/Button.vue";
 import Dialog from "./dialog/Dialog.vue";
 import InputText from "./inputtext/InputText.vue";
+import InputNumber from "./inputnumber/InputNumber.vue";
 import Dropdown from "./dropdown/Dropdown.vue";
 import Ripple from "./ripple/ripple";
 
-export { Column, Table, Button, Dialog, InputText, Dropdown, Ripple };
+export {
+  Column,
+  Table,
+  Button,
+  Dialog,
+  InputText,
+  InputNumber,
+  Dropdown,
+  Ripple,
+};

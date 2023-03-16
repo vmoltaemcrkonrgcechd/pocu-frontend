@@ -16,6 +16,11 @@ const props = defineProps({
     type: Boolean as PropType<boolean>,
     default: () => false,
   },
+
+  readonly: {
+    type: Boolean as PropType<boolean>,
+    default: () => false,
+  },
 });
 
 const emit = defineEmits(["update:modelValue"]);
@@ -39,6 +44,7 @@ const inputClass = computed(() => {
       :value="modelValue"
       @input="onInput"
       :disabled="disabled"
+      :readonly="readonly"
     />
     <span v-if="label" class="label">{{ label }}</span>
   </label>
