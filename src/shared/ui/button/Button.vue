@@ -61,7 +61,8 @@ const buttonClass = computed(() => {
 	text-sm
 	transition-colors
 	relative
-	overflow-hidden;
+	overflow-hidden
+	justify-center;
 }
 
 .danger {
@@ -70,8 +71,7 @@ const buttonClass = computed(() => {
 }
 
 .only-icon {
-  @apply justify-center
-	px-2
+  @apply px-2
 	rounded-full;
 }
 

@@ -63,6 +63,9 @@ const columns = computed(() => slots.default?.());
 .cell {
   @apply py-2
 	px-4
-	whitespace-nowrap;
+	whitespace-nowrap
+	overflow-hidden
+	max-w-fit
+	text-ellipsis;
 }
 </style>

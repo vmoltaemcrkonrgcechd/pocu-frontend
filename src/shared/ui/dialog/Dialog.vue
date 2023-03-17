@@ -21,11 +21,13 @@ const onClick = (event: Event) => {
 
 <template>
   <teleport to="body">
-    <div v-if="modelValue" @click="onClick" class="dialog">
-      <div ref="dialogContent" class="rounded-md bg-white py-8 px-4">
-        <slot />
+    <transition>
+      <div v-if="modelValue" @click="onClick" class="dialog">
+        <div ref="dialogContent" class="rounded-md bg-white py-8 px-4">
+          <slot />
+        </div>
       </div>
-    </div>
+    </transition>
   </teleport>
 </template>
 
@@ -41,5 +43,17 @@ const onClick = (event: Event) => {
   justify-center
   bg-gray-900
   bg-opacity-50;
+}
+
+.v-enter-active,
+.v-leave-active {
+  @apply transition-all
+	duration-150;
+}
+
+.v-enter-from,
+.v-leave-to {
+  @apply translate-y-1
+	opacity-0;
 }
 </style>
