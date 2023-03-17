@@ -5,6 +5,7 @@ import Dialog from "./dialog/Dialog.vue";
 import InputText from "./inputtext/InputText.vue";
 import InputNumber from "./inputnumber/InputNumber.vue";
 import Dropdown from "./dropdown/Dropdown.vue";
+import Paginator from "./paginator/Paginator.vue";
 import Ripple from "./ripple/ripple";
 
 export {
@@ -15,5 +16,6 @@ export {
   InputText,
   InputNumber,
   Dropdown,
+  Paginator,
   Ripple,
 };
