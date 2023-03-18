@@ -55,7 +55,7 @@ const setCurrent = (i: number): void => {
   text-blue-600
   text-sm
   border
-  border-blue-500;
+  border-blue-600;
 }
 
 .current {

@@ -8,13 +8,20 @@ import {
   Column,
   Paginator,
   Dialog,
+  Checkbox,
 } from "@/shared/ui";
 import { Delete, Add, Edit } from "@/shared/icons";
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 const inputTextValue = ref<string>("");
 
 const dropdownValue = ref({ name: "" });
+
+const checkboxValue = ref([]);
+
+watch(checkboxValue, () => {
+  console.log(checkboxValue.value);
+});
 
 const users = [
   {
@@ -34,13 +41,9 @@ const isOpen = ref<boolean>(false);
 
 <template>
   <div class="h-screen grid grid-cols-12 grid-rows-6 bg-blue-100 p-3 gap-3">
-    <div
-      class="card col-span-2 grid grid-cols-2 gap-3 items-center justify-items-center"
-    >
-      <Button label="Добавить" :icon="Add" />
-      <Button label="Удалить" danger :icon="Delete" />
-      <Button :icon="Add" />
-      <Button danger :icon="Delete" />
+    <div class="card col-span-2 flex items-center justify-center flex-col">
+      <h2 class="title">Диалоговое окно</h2>
+      <Button label="Открыть" @click="isOpen = true" />
     </div>
     <div class="card col-span-2 flex items-center justify-center flex-col">
       <h2 class="title">Ввод текста</h2>
@@ -71,9 +74,17 @@ const isOpen = ref<boolean>(false);
       </Table>
       <Paginator :rows-per-page="10" :total-records="120" />
     </div>
-    <div class="card col-span-2 flex items-center justify-center flex-col">
-      <h2 class="title">Диалоговое окно</h2>
-      <Button label="Открыть" @click="isOpen = true" />
+    <div
+      class="card col-span-3 grid grid-cols-2 gap-3 items-center justify-items-center"
+    >
+      <Button label="Добавить" :icon="Add" />
+      <Button label="Удалить" danger :icon="Delete" />
+      <Button :icon="Add" />
+      <Button danger :icon="Delete" />
+    </div>
+    <div class="card col-span-3 flex items-center justify-center flex-col">
+      <h2 class="title">Флажок</h2>
+      <Checkbox :value="users[0]" v-model="checkboxValue" label="Доступны" />
     </div>
     <Dialog v-model="isOpen">
       <form @submit.prevent class="flex flex-col gap-y-6">

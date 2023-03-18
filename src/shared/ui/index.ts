@@ -6,6 +6,7 @@ import InputText from "./inputtext/InputText.vue";
 import InputNumber from "./inputnumber/InputNumber.vue";
 import Dropdown from "./dropdown/Dropdown.vue";
 import Paginator from "./paginator/Paginator.vue";
+import Checkbox from "./checkbox/Checkbox.vue";
 import Ripple from "./ripple/ripple";
 
 export {
@@ -17,5 +18,6 @@ export {
   InputNumber,
   Dropdown,
   Paginator,
+  Checkbox,
   Ripple,
 };
