@@ -50,7 +50,6 @@ const setCurrent = (i: number): void => {
   items-center
   justify-center
   rounded-md
-  text-white
   hover:bg-blue-100
   text-blue-600
   text-sm
