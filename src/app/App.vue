@@ -9,6 +9,7 @@ import {
   Paginator,
   Dialog,
   Checkbox,
+  MultiSelect,
 } from "@/shared/ui";
 import { Delete, Add, Edit } from "@/shared/icons";
 import { ref, watch } from "vue";
@@ -16,12 +17,6 @@ import { ref, watch } from "vue";
 const inputTextValue = ref<string>("");
 
 const dropdownValue = ref({ name: "" });
-
-const checkboxValue = ref([]);
-
-watch(checkboxValue, () => {
-  console.log(checkboxValue.value);
-});
 
 const users = [
   {
@@ -35,6 +30,8 @@ const users = [
     email: "Shanna@melissa.tv",
   },
 ];
+
+const checkboxValue = ref([users[0]]);
 
 const isOpen = ref<boolean>(false);
 </script>
@@ -83,6 +80,15 @@ const isOpen = ref<boolean>(false);
       <Button danger :icon="Delete" />
     </div>
     <div class="card col-span-3 flex items-center justify-center flex-col">
+      <h2 class="title">Выбор из нескольких вариантов</h2>
+      <MultiSelect
+        :options="users"
+        option-label="name"
+        v-model="checkboxValue"
+        label="Доступны"
+      />
+    </div>
+    <div class="card col-span-2 flex items-center justify-center flex-col">
       <h2 class="title">Флажок</h2>
       <Checkbox :value="users[0]" v-model="checkboxValue" label="Доступны" />
     </div>

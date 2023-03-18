@@ -7,6 +7,7 @@ import InputNumber from "./inputnumber/InputNumber.vue";
 import Dropdown from "./dropdown/Dropdown.vue";
 import Paginator from "./paginator/Paginator.vue";
 import Checkbox from "./checkbox/Checkbox.vue";
+import MultiSelect from "./multiselect/MultiSelect.vue";
 import Ripple from "./ripple/ripple";
 
 export {
@@ -19,5 +20,6 @@ export {
   Dropdown,
   Paginator,
   Checkbox,
+  MultiSelect,
   Ripple,
 };
