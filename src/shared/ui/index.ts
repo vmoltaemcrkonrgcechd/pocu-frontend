@@ -8,6 +8,7 @@ import Dropdown from "./dropdown/Dropdown.vue";
 import Paginator from "./paginator/Paginator.vue";
 import Checkbox from "./checkbox/Checkbox.vue";
 import MultiSelect from "./multiselect/MultiSelect.vue";
+import DialogOpenButton from "./dialog-open-button/DialogOpenButton.vue";
 import Ripple from "./ripple/ripple";
 
 export {
@@ -21,5 +22,6 @@ export {
   Paginator,
   Checkbox,
   MultiSelect,
+  DialogOpenButton,
   Ripple,
 };

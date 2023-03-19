@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { weaponAPI } from "./api";
 import { ref, computed } from "vue";
-import { iWeapon } from "@/shared/types";
+import { iWeapon, iWeaponDTO } from "@/shared/types";
 import { iFilter } from "@/entities/weapon/types";
 
 export const useStore = defineStore("weapon", () => {
@@ -36,6 +36,9 @@ export const useStore = defineStore("weapon", () => {
       });
   };
 
+  const add = (dto: iWeaponDTO): Promise<void> =>
+    weaponAPI.add(dto).then(() => all());
+
   return {
     all,
     weapons,
@@ -44,5 +47,6 @@ export const useStore = defineStore("weapon", () => {
     page,
     setPage,
     setFilter,
+    add,
   };
 });

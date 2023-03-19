@@ -23,7 +23,7 @@ const onClick = (event: Event) => {
   <teleport to="body">
     <transition>
       <div v-if="modelValue" @click="onClick" class="dialog">
-        <div ref="dialogContent" class="rounded-md bg-white py-8 px-4">
+        <div ref="dialogContent">
           <slot />
         </div>
       </div>

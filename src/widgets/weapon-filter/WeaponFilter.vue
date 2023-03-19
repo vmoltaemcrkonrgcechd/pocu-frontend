@@ -19,6 +19,16 @@ const orderByOptions: iOrderByOption[] = [
     field: "attack",
     keyword: "desc",
   },
+  {
+    label: "Возрастанию массы",
+    field: "weight",
+    keyword: "asc",
+  },
+  {
+    label: "Убыванию массы",
+    field: "weight",
+    keyword: "desc",
+  },
 ];
 
 const apply = (): void => {
