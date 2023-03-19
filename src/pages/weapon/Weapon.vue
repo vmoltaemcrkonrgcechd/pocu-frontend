@@ -2,6 +2,7 @@
 import { PageHeader } from "@/widgets/page-header";
 import { Layout } from "@/widgets/layout";
 import { WeaponTable } from "@/widgets/weapon-table";
+import { WeaponPagination } from "@/widgets/weapon-pagination";
 </script>
 
 <template>
@@ -10,5 +11,6 @@ import { WeaponTable } from "@/widgets/weapon-table";
     <div>
       <WeaponTable />
     </div>
+    <WeaponPagination />
   </Layout>
 </template>

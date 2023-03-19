@@ -1,6 +1,7 @@
 import { instance } from "@/shared/api-instance";
 import { AxiosResponse } from "axios";
 import { iAllWeaponsDTO, iWeaponDTO } from "@/shared/types";
+import { iAllQP } from "./types";
 
 const add = (dto: iWeaponDTO): Promise<AxiosResponse<void>> => {
   return instance.post("/weapons", dto);
@@ -14,8 +15,8 @@ const edit = (dto: iWeaponDTO, id: number): Promise<AxiosResponse<void>> => {
   return instance.patch(`/weapons/${id}`, dto);
 };
 
-const all = (): Promise<AxiosResponse<iAllWeaponsDTO>> => {
-  return instance.get("/weapons");
+const all = (qp: iAllQP): Promise<AxiosResponse<iAllWeaponsDTO>> => {
+  return instance.get("/weapons", { params: qp });
 };
 
 export const weaponAPI = {

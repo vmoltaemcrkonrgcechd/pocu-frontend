@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType, ref } from "vue";
+import { PropType } from "vue";
 import "../ripple/ripple.css";
 
 const props = defineProps({
@@ -13,16 +13,16 @@ const props = defineProps({
     default: () => 10,
   },
 
-  modelValue: {
+  current: {
     type: Number as PropType<number>,
     default: () => 0,
   },
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(["set-current"]);
 
 const setCurrent = (i: number): void => {
-  emit("update:modelValue", i);
+  emit("set-current", i);
 };
 </script>
 
@@ -32,7 +32,7 @@ const setCurrent = (i: number): void => {
       @click="setCurrent(i)"
       v-ripple
       class="page"
-      :class="{ current: i === modelValue }"
+      :class="{ current: i === current }"
       v-for="(_, i) in new Array(Math.ceil(totalRecords / rowsPerPage))"
       >{{ (i + 1).toString() }}</span
     >
