@@ -27,7 +27,7 @@ const setCurrent = (i: number): void => {
 </script>
 
 <template>
-  <div class="flex items-center gap-x-1">
+  <div class="flex items-center gap-x-1" v-if="rowsPerPage < totalRecords">
     <span
       @click="setCurrent(i)"
       v-ripple

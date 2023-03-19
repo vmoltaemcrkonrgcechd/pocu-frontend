@@ -7,7 +7,7 @@ import { iFilter } from "@/entities/weapon/types";
 export const useStore = defineStore("weapon", () => {
   const weapons = ref<iWeapon[]>([]);
   const quantity = ref<number>(0);
-  const rowsPerPage = ref<number>(1);
+  const rowsPerPage = ref<number>(10);
 
   const page = ref<number>(0);
   const setPage = (newPage: number): void => {
