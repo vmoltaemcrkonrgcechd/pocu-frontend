@@ -19,6 +19,6 @@ const onSubmit = (dto: iWeaponDTO): void => {
   <Button :icon="Add" label="Добавить оружие" @click="isOpen = true" />
 
   <Dialog v-model="isOpen">
-    <WeaponForm @submit="onSubmit" />
+    <WeaponForm :icon="Add" @submit="onSubmit" label="Добавить" />
   </Dialog>
 </template>

@@ -10,7 +10,7 @@ const props = defineProps({
 
   icon: {
     type: Object as PropType<any>,
-    default: null,
+    default: () => null,
   },
 
   danger: {

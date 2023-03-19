@@ -39,6 +39,9 @@ export const useStore = defineStore("weapon", () => {
   const add = (dto: iWeaponDTO): Promise<void> =>
     weaponAPI.add(dto).then(() => all());
 
+  const edit = (dto: iWeaponDTO, id: number): Promise<void> =>
+    weaponAPI.edit(dto, id).then(() => all());
+
   return {
     all,
     weapons,
@@ -48,5 +51,6 @@ export const useStore = defineStore("weapon", () => {
     setPage,
     setFilter,
     add,
+    edit,
   };
 });
