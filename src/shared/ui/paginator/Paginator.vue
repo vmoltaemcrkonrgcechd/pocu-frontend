@@ -12,16 +12,17 @@ const props = defineProps({
     type: Number as PropType<number>,
     default: () => 10,
   },
+
+  modelValue: {
+    type: Number as PropType<number>,
+    default: () => 0,
+  },
 });
 
-const emit = defineEmits(["offset"]);
-
-const current = ref<number>(0);
+const emit = defineEmits(["update:modelValue"]);
 
 const setCurrent = (i: number): void => {
-  current.value = i;
-
-  emit("offset", current.value * props.rowsPerPage);
+  emit("update:modelValue", i);
 };
 </script>
 
@@ -31,7 +32,7 @@ const setCurrent = (i: number): void => {
       @click="setCurrent(i)"
       v-ripple
       class="page"
-      :class="{ current: i === current }"
+      :class="{ current: i === modelValue }"
       v-for="(_, i) in new Array(Math.ceil(totalRecords / rowsPerPage))"
       >{{ (i + 1).toString() }}</span
     >

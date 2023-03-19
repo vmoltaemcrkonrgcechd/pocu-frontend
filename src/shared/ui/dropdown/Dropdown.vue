@@ -56,7 +56,7 @@ const onClick = (option: option): void => {
       <InputText
         disabled
         :label="label"
-        :model-value="modelValue[optionLabel]"
+        :model-value="modelValue?.[optionLabel]"
         class="pointer-events-none"
       />
     </span>

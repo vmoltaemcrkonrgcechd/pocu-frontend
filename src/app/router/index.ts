@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import { Weapon } from "@/pages/weapon/ui";
+import { Weapon } from "@/pages/weapon";
 
 const routes: RouteRecordRaw[] = [
   {

@@ -58,7 +58,8 @@ const inputClass = computed(() => {
   text-gray-900
   outline-none
   border
-  border-blue-600;
+  border-blue-600
+  w-full;
 }
 
 .label {
