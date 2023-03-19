@@ -3,6 +3,7 @@ import { Table, Column } from "@/shared/ui";
 import { useWeaponStore } from "@/entities/weapon";
 import { onMounted } from "vue";
 import { WeaponEditForm } from "@/features/weapon-edit-form";
+import { WeaponDeleteButton } from "@/features/weapon-delete-button";
 
 const store = useWeaponStore();
 
@@ -18,6 +19,7 @@ onMounted(() => store.all());
       <template v-slot="slotProps">
         <span class="w-full h-full flex justify-center gap-x-2">
           <WeaponEditForm :weapon="slotProps.row" />
+          <WeaponDeleteButton :id="slotProps.row.id" />
         </span>
       </template>
     </Column>
